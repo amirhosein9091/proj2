@@ -243,7 +243,7 @@ namespace proj2
                 h1.name = textBox1.Text;
                 h1.family = textBox2.Text;
                 h1.code = textBox3.Text;
-                h1.phone = textBox4.Text;a
+                h1.phone = textBox4.Text;
                 h1.gender = comboBox1.SelectedItem.ToString();
                 h1.birthd = maskedTextBox1.Text;
                 h1.registerd = maskedTextBox2.Text;
@@ -373,12 +373,12 @@ namespace proj2
             h1.phone=textBox11.Text;
             h1.gender=comboBox2.SelectedItem.ToString();
             h1.birthd=maskedTextBox3.Text;
-            var q = b1.find_human2(textBox9.Text);
+            var q = b1.find_human2(name);
             h1.name_id = q.name_id;
             h1.password = q.password;
             h1.photo = q.photo;
             h1.registerd = q.registerd;
-            if (b1.edith(h1, idi2)||b1.edith2(h1,textBox9.Text))
+            if (b1.edith(h1, idi2)||b1.edith2(h1,name))
             {
                 MessageBox.Show("ویرایش شد");
                 textBox10.Clear();
@@ -415,13 +415,14 @@ namespace proj2
         {
             idi2 = (int)dataGridView2.Rows[e.RowIndex].Cells[0].Value;
         }
-
+        string name;
         private void button5_Click_2(object sender, EventArgs e)
         {
             human h1=new human();
             BLl b1 = new BLl();
             var q = b1.selecth(textBox14.Text);
             textBox9.Text = q.name;
+            name = q.name;
             textBox13.Text = q.family;
             textBox12.Text = q.code;
             textBox10.Text = q.address;
