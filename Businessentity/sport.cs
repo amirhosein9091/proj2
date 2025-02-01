@@ -9,6 +9,7 @@ namespace Businessentity
     public class sport
     {
         public int id { get; set; }
+        public int code_kala { get; set; }
         public string name { get; set; }
         public string size { get; set; }
         public string color { get; set; }
