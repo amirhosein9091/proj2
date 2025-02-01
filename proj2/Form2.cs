@@ -366,34 +366,65 @@ namespace proj2
         {
             human h1 = new human();
             BLl b1 = new BLl();
-            h1.name = textBox9.Text;
-            h1.family=textBox13.Text;
-            h1.code=textBox12.Text;
-            h1.address=textBox10.Text;
-            h1.phone=textBox11.Text;
-            h1.gender=comboBox2.SelectedItem.ToString();
-            h1.birthd=maskedTextBox3.Text;
-            var q = b1.find_human2(name);
-            h1.name_id = q.name_id;
-            h1.password = q.password;
-            h1.photo = q.photo;
-            h1.registerd = q.registerd;
-            if (b1.edith(h1, idi2)||b1.edith2(h1,name))
+            if (textBox9.Text.Trim().Length==0)
             {
-                MessageBox.Show("ویرایش شد");
-                textBox10.Clear();
-                textBox11.Clear();
-                textBox12.Clear();
-                textBox13.Clear();
-                textBox14.Clear();
-                textBox9.Clear();
-                comboBox2.Text = null;
-                maskedTextBox3.Clear();
-                dataGridView1.DataSource = null;
-                dataGridView1.DataSource = b1.read_human();
-                dataGridView2.DataSource = null;
-                dataGridView2.DataSource = b1.read_human();
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox10.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox11.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox12.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox13.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (maskedTextBox3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (comboBox2.SelectedItem==null)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else
+            {
+                h1.name = textBox9.Text;
+                h1.family = textBox13.Text;
+                h1.code = textBox12.Text;
+                h1.address = textBox10.Text;
+                h1.phone = textBox11.Text;
+                h1.gender = comboBox2.SelectedItem.ToString();
+                h1.birthd = maskedTextBox3.Text;
+                var q = b1.find_human2(name);
+                h1.name_id = q.name_id;
+                h1.password = q.password;
+                h1.photo = q.photo;
+                h1.registerd = q.registerd;
+                if (b1.edith(h1, idi2) || b1.edith2(h1, name))
+                {
+                    MessageBox.Show("ویرایش شد");
+                    textBox10.Clear();
+                    textBox11.Clear();
+                    textBox12.Clear();
+                    textBox13.Clear();
+                    textBox14.Clear();
+                    textBox9.Clear();
+                    comboBox2.Text = null;
+                    maskedTextBox3.Clear();
+                    dataGridView1.DataSource = null;
+                    dataGridView1.DataSource = b1.read_human();
+                    dataGridView2.DataSource = null;
+                    dataGridView2.DataSource = b1.read_human();
 
+                }
             }
         }
 
