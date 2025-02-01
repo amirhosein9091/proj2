@@ -465,7 +465,7 @@ namespace proj2
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            textBox10.Clear();
+            textBox10.Clear()
             textBox11.Clear();
             textBox12.Clear();
             textBox13.Clear();
