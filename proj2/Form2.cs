@@ -801,6 +801,24 @@ namespace proj2
         {
 
         }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox3.Text.Trim().Length<10)
+            {
+                errorProvider1.SetError(textBox3,"اطلاعات را کامل وارد کنید");
+                textBox3.Focus();
+            }
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox4.Text.Trim().Length < 11)
+            {
+                errorProvider1.SetError(textBox4, "اطلاعات را کامل وارد کنید");
+                textBox4.Focus();
+            }
+        }
     }
     
 
