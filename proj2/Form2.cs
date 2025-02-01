@@ -42,6 +42,7 @@ namespace proj2
             //button1.Visible = true;
             //button2.Visible = false;
             human h1 = new human();
+            textBoxX1.WatermarkText = "اخرین کد:" + b1.read_code_kala().ToString();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = b1.read_human();
             dataGridView2.DataSource = null;
@@ -465,7 +466,7 @@ namespace proj2
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            textBox10.Clear()
+            textBox10.Clear();
             textBox11.Clear();
             textBox12.Clear();
             textBox13.Clear();
@@ -549,6 +550,7 @@ namespace proj2
                 k1.sprice=s1.sprice = Convert.ToInt32(textBox21.Text);
                 k1.type=s1.type = comboBox5.SelectedItem.ToString();
                 k1.goal=s1.goal = comboBox4.SelectedItem.ToString();
+                k1.code_kala=s1.code_kala = Convert.ToInt32(textBoxX1.Text);
                 if (b1.saveS(s1))
                 {
                     b1.savek(k1);
@@ -564,7 +566,7 @@ namespace proj2
                     textBox19.Clear();
                     textBox20.Clear();
                     textBox21.Clear();
-                    textBox22.Clear();
+                    textBoxX1.Clear();
                     textBox17.Focus();
 
                 }
@@ -582,6 +584,7 @@ namespace proj2
                 k1.sprice=p1.sprice = Convert.ToInt32(textBox21.Text);
                 k1.type=p1.type = comboBox5.SelectedItem.ToString();
                 k1.goal=p1.goal = comboBox4.SelectedItem.ToString();
+                k1.code_kala=p1.code_kala = Convert.ToInt32(textBoxX1.Text);
                 if (b1.savep(p1))
                 {
                     MessageBox.Show("ثبت شد");
@@ -592,7 +595,7 @@ namespace proj2
                     comboBox4.SelectedItem = null;
                     comboBox5.SelectedItem = null;
                     textBox19.Clear();
-                    textBox22.Clear();
+                    textBoxX1.Clear();
                     textBox20.Clear();
                     textBox21.Clear();
                     textBox17.Focus();
@@ -614,7 +617,7 @@ namespace proj2
             textBox19.Clear();
             textBox20.Clear();
             textBox21.Clear();
-            textBox22.Clear();
+            textBoxX1.Clear();
             textBox17.Focus();
         }
 

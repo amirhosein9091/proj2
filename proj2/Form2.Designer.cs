@@ -49,7 +49,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.textBox20 = new System.Windows.Forms.TextBox();
@@ -162,6 +161,7 @@
             this.حذفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.tabControl3.SuspendLayout();
@@ -231,6 +231,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.SkyBlue;
+            this.tabPage4.Controls.Add(this.textBoxX1);
             this.tabPage4.Controls.Add(this.button12);
             this.tabPage4.Controls.Add(this.button11);
             this.tabPage4.Controls.Add(this.comboBox5);
@@ -245,7 +246,6 @@
             this.tabPage4.Controls.Add(this.label26);
             this.tabPage4.Controls.Add(this.label25);
             this.tabPage4.Controls.Add(this.label24);
-            this.tabPage4.Controls.Add(this.textBox22);
             this.tabPage4.Controls.Add(this.textBox21);
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Controls.Add(this.textBox20);
@@ -401,14 +401,6 @@
             this.label24.Size = new System.Drawing.Size(56, 29);
             this.label24.TabIndex = 10;
             this.label24.Text = "نام کالا";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(162, 32);
-            this.textBox22.MaxLength = 20;
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(121, 37);
-            this.textBox22.TabIndex = 6;
             // 
             // textBox21
             // 
@@ -1570,6 +1562,19 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // textBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.textBoxX1.Location = new System.Drawing.Point(146, 32);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.PreventEnterBeep = true;
+            this.textBoxX1.Size = new System.Drawing.Size(121, 37);
+            this.textBoxX1.TabIndex = 30;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1713,7 +1718,6 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox22;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.TextBox textBox20;
@@ -1754,5 +1758,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.ComboBox comboBox10;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
     }
 }
