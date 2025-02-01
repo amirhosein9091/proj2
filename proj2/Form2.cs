@@ -243,7 +243,7 @@ namespace proj2
                 h1.name = textBox1.Text;
                 h1.family = textBox2.Text;
                 h1.code = textBox3.Text;
-                h1.phone = textBox4.Text;
+                h1.phone = textBox4.Text;a
                 h1.gender = comboBox1.SelectedItem.ToString();
                 h1.birthd = maskedTextBox1.Text;
                 h1.registerd = maskedTextBox2.Text;
