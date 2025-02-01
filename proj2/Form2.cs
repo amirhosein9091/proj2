@@ -42,7 +42,6 @@ namespace proj2
             //button1.Visible = true;
             //button2.Visible = false;
             human h1 = new human();
-            textBoxX1.WatermarkText = "اخرین کد:" + b1.read_code_kala().ToString();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = b1.read_human();
             dataGridView2.DataSource = null;
@@ -52,23 +51,8 @@ namespace proj2
             dataGridView5.DataSource = null;
             dataGridView5.DataSource = b1.read_kala();
             dataGridView4.DataSource = null;
-            dataGridView4.DataSource = b1.read_kala();
-            if (comboBox5.SelectedItem == null)
-            {
-                dataGridView4.DataSource = null;
-                dataGridView4.DataSource = b1.read_kala();
-            }
-            else if (comboBox5.SelectedItem == "لوازم ورزشی")
-            {
-                dataGridView4.DataSource = null;
-                dataGridView4.DataSource = b1.read_sport();
-            }
-            else if (comboBox5.SelectedItem == "پوشاک")
-            {
-                dataGridView4.DataSource = null;
-                dataGridView4.DataSource = b1.read_poshak();
-            }
-
+            dataGridView4.DataSource=b1.read_kala();
+            textBoxX1.WatermarkText = "اخرین کد:" + b1.read_code_kala().ToString();
 
         }
 
@@ -558,6 +542,7 @@ namespace proj2
                     dataGridView4.DataSource = null;
                     dataGridView4.DataSource = b1.read_kala();
                     dataGridView5.DataSource = null;
+                    textBoxX1.WatermarkText = "اخرین کد:" + b1.read_code_kala().ToString();
                     comboBox5.SelectedItem = null;
                     textBox17.Clear();
                     comboBox3.SelectedItem = null;
@@ -570,8 +555,6 @@ namespace proj2
                     textBox17.Focus();
 
                 }
-                dataGridView4.DataSource = null;
-                dataGridView4.DataSource = b1.read_sport();
             }
             else if (comboBox5.SelectedItem == "پوشاک")
             {
@@ -587,8 +570,11 @@ namespace proj2
                 k1.code_kala=p1.code_kala = Convert.ToInt32(textBoxX1.Text);
                 if (b1.savep(p1))
                 {
-                    MessageBox.Show("ثبت شد");
                     b1.savek(k1);
+                    MessageBox.Show("ثبت شد");
+                    dataGridView4.DataSource = null;
+                    dataGridView4.DataSource = b1.read_kala();
+                    textBoxX1.WatermarkText = "اخرین کد:" + b1.read_code_kala().ToString();
                     textBox17.Clear();
                     comboBox3.SelectedItem = null;
                     textBox18.Clear();
@@ -601,8 +587,6 @@ namespace proj2
                     textBox17.Focus();
 
                 }
-                dataGridView4.DataSource = null;
-                dataGridView4.DataSource = b1.read_poshak();
             }
            
         }
@@ -680,8 +664,6 @@ namespace proj2
                     comboBox10.SelectedItem = null;
                     dataGridView5.DataSource = null;
                     dataGridView5.DataSource = b1.read_kala();
-                    dataGridView4.DataSource = null;
-                    dataGridView4.DataSource = b1.read_kala();
 
                 }
             }
@@ -712,8 +694,6 @@ namespace proj2
                     comboBox10.SelectedItem = null;
                     dataGridView5.DataSource = null;
                     dataGridView5.DataSource = b1.read_kala();
-                    dataGridView4.DataSource = null;
-                    dataGridView4.DataSource = b1.read_kala();
 
                 }
 
@@ -786,23 +766,24 @@ namespace proj2
 
         }
 
-        private void dataGridView4_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-
-            dataGridView4.Columns["name"].HeaderText = "نام کالا";
-            dataGridView4.Columns["size"].HeaderText = "سایز کالا";
-            dataGridView4.Columns["color"].HeaderText = "رنگ بندی";
-            dataGridView4.Columns["number"].HeaderText = "شماره تماس";
-            dataGridView4.Columns["bprice"].HeaderText = "قیمت خرید";
-            dataGridView4.Columns["sprice"].HeaderText = "قیمت فروش";
-            dataGridView4.Columns["type"].HeaderText = "گروه کالا";
-            dataGridView4.Columns["goal"].HeaderText = "خریدار هدف";
-            dataGridView4.Columns["id"].Visible = false;
-        }
-
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            BLl b1=new BLl();
+            if (comboBox5.SelectedItem == null)
+            {
+                dataGridView4.DataSource = null;
+                dataGridView4.DataSource = b1.read_kala();
+            }
+            else if (comboBox5.SelectedItem == "لوازم ورزشی")
+            {
+                dataGridView4.DataSource = null;
+                dataGridView4.DataSource = b1.read_sport();
+            }
+            else if (comboBox5.SelectedItem == "پوشاک")
+            {
+                dataGridView4.DataSource = null;
+                dataGridView4.DataSource = b1.read_poshak();
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -820,6 +801,16 @@ namespace proj2
             {
                 errorProvider1.SetError(textBox4, "اطلاعات را کامل وارد کنید");
                 textBox4.Focus();
+            }
+        }
+
+        private void comboBox5_Leave(object sender, EventArgs e)
+        {
+            BLl b1 = new BLl();
+            if (comboBox5.SelectedItem==null)
+            {
+                dataGridView4.DataSource = null;
+                dataGridView4.DataSource = b1.read_kala();
             }
         }
     }
