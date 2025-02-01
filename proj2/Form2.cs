@@ -610,7 +610,7 @@ namespace proj2
             else if (comboBox6.SelectedItem=="پوشاک")
             {
                 poshak p1=new   poshak();
-                kala k1 = new kala();
+                kala k1 = new kala()ک
                 k1.name = p1.name = textBox27.Text;
                 k1.size = p1.size = textBox8.Text;
                 k1.color = p1.color = textBox26.Text;
