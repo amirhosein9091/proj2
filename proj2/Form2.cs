@@ -198,51 +198,94 @@ namespace proj2
         {
             human h1 = new human();
             BLl b1 = new BLl();
-            h1.name = textBox1.Text;
-            h1.family = textBox2.Text;
-            h1.code = textBox3.Text;
-            h1.phone = textBox4.Text;
-            h1.gender = comboBox1.SelectedItem.ToString();
-            h1.birthd=maskedTextBox1.Text;
-            h1.registerd=maskedTextBox2.Text;
-            h1.address = textBox5.Text;
-            h1.photo = "123";
-            h1.name_id= textBox6.Text;
-            h1.password = textBox7.Text;
-            if (b1.check(h1)==false)
+            if (textBox1.Text.Trim().Length==0)
             {
-                if (b == true)
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox2.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox3.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox4.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox5.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox6.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox7.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (textBox8.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (maskedTextBox1.Text.Trim().Length==0)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else if (comboBox1.SelectedItem==null)
+            {
+                MessageBox.Show("اطلاعات به درستی وارد نشده است");
+            }
+            else
+            {
+                h1.name = textBox1.Text;
+                h1.family = textBox2.Text;
+                h1.code = textBox3.Text;
+                h1.phone = textBox4.Text;
+                h1.gender = comboBox1.SelectedItem.ToString();
+                h1.birthd = maskedTextBox1.Text;
+                h1.registerd = maskedTextBox2.Text;
+                h1.address = textBox5.Text;
+                h1.photo = "123";
+                h1.name_id = textBox6.Text;
+                h1.password = textBox7.Text;
+                if (b1.check(h1) == false)
                 {
-                    if (b1.saveh(h1))
+                    if (b == true)
                     {
-                        MessageBox.Show("ثبت شد");
-                        textBox1.Clear();
-                        textBox2.Clear();
-                        textBox3.Clear();
-                        textBox4.Clear();
-                        textBox5.Clear();
-                        textBox6.Clear();
-                        textBox7.Clear();
-                        textBox8.Clear();
-                        maskedTextBox1.Clear();
-                        maskedTextBox2.Clear();
-                        comboBox1.SelectedItem = null;
-                        textBox1.Focus();
-                        dataGridView1.DataSource = null;
-                        dataGridView1.DataSource = b1.read_human();
-                        dataGridView2.DataSource = null;
-                        dataGridView2.DataSource = b1.read_human();
+                        if (b1.saveh(h1))
+                        {
+                            MessageBox.Show("ثبت شد");
+                            textBox1.Clear();
+                            textBox2.Clear();
+                            textBox3.Clear();
+                            textBox4.Clear();
+                            textBox5.Clear();
+                            textBox6.Clear();
+                            textBox7.Clear();
+                            textBox8.Clear();
+                            maskedTextBox1.Clear();
+                            maskedTextBox2.Clear();
+                            comboBox1.SelectedItem = null;
+                            textBox1.Focus();
+                            dataGridView1.DataSource = null;
+                            dataGridView1.DataSource = b1.read_human();
+                            dataGridView2.DataSource = null;
+                            dataGridView2.DataSource = b1.read_human();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("رمز عبور با تکرار آن هم خوانی ندارد");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("رمز عبور با تکرار آن هم خوانی ندارد");
+                    MessageBox.Show("این کاربر وجود دارد");
+                    textBox6.Focus();
                 }
-            }
-            else
-            {
-                MessageBox.Show("این کاربر وجود دارد");
-                textBox6.Focus();
             }
         }
 
@@ -610,7 +653,7 @@ namespace proj2
             else if (comboBox6.SelectedItem=="پوشاک")
             {
                 poshak p1=new   poshak();
-                kala k1 = new kala()ک
+                kala k1 = new kala();
                 k1.name = p1.name = textBox27.Text;
                 k1.size = p1.size = textBox8.Text;
                 k1.color = p1.color = textBox26.Text;
