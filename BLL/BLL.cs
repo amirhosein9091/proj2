@@ -188,6 +188,11 @@ namespace BLL
             DAl d1 = new DAl();
             return d1.search_name(name);
         }
+        public int read_code_kala()
+        {
+            DAl d1=new DAl();
+            return d1.read_code_kala();
+        }
 
     }
 }

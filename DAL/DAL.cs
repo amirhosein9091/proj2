@@ -352,7 +352,23 @@ namespace DAL
             var q = from i in db.humen where i.name.Contains(name) select i;
             return q.ToList();
         }
-        
+        public int read_code_kala()
+        {
+            Db db = new Db();
+            kala k1 = new kala();
+            int max = 0;
+            foreach (var i in db.kalas)
+            {
+                if (i.id > max)
+                {
+                    max = i.id;
+                }
+            }
+            var q = (from i in db.kalas where i.id == max select i.code_kala).FirstOrDefault();
+            return q;
+
+        }
+
 
     }
 }
